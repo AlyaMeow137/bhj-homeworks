@@ -5,12 +5,13 @@ const value = document.querySelector('.dropdown__value')
 function clickList () {
     list.classList.add('dropdown__list_active')
 };
-list.addEventListener('click', clickList);
+value.addEventListener('click', clickList);
 
-function clickItems () {
-    list.classList.remove('dropdown__list_active');
-    let text = this.textContent;
+function clickItems (event) {
+    let text = event.target.textContent;
+    value.textContent = '';
     value.textContent = text;
+    list.classList.remove('dropdown__list_active');
 }
 items.forEach(item => {
     item.addEventListener('click', clickItems)
