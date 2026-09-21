@@ -3,8 +3,8 @@ const contents = Array.from(document.querySelectorAll('.tab__content'));
 
 function clickTab () {
     tabs.forEach((item, index) => {
-        item.classList.add('tab_active');
-        contents[index].classList.add('tab__content_active'); 
+        item.classList.toggle('tab_active');
+        contents[index].classList.toggle('tab__content_active'); 
     })
 }
 
